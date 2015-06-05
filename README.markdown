@@ -1,15 +1,15 @@
-# KLogger: Simple Logging for PHP
+# MLogger: Simple Logging for PHP
 
-A project written by [Kenny Katzgrau](http://twitter.com/katzgrau) and [Dan Horrigan](http://twitter.com/dhrrgn).
+A project written by [Paul Coifier](http://www.mobissime.com) .
 
 ## About
 
-KLogger is an easy-to-use [PSR-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md)
+MLogger is an easy-to-use [PSR-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md)
 compliant logging class for PHP. It isn't naive about
 file permissions (which is expected). It was meant to be a class that you could
 quickly include into a project and have working right away.
 
-If you need a logger that supports PHP < 5.3, see [past releases](https://github.com/katzgrau/KLogger/releases) for KLogger versions < 1.0.0.
+If you need a logger that supports PHP < 5.3.
 
 ## Installation
 
@@ -18,7 +18,7 @@ If you need a logger that supports PHP < 5.3, see [past releases](https://github
 From the Command Line:
 
 ```
-composer require katzgrau/klogger:dev-master
+composer require liberta\mlogger:2.0
 ```
 
 In your `composer.json`:
@@ -26,7 +26,7 @@ In your `composer.json`:
 ``` json
 {
     "require": {
-        "katzgrau/klogger": "dev-master"
+        "liberta\mlogger": "2.0"
     }
 }
 ```
@@ -49,7 +49,7 @@ $users = [
     ],
 ];
 
-$logger = new Katzgrau\KLogger\Logger(__DIR__.'/logs');
+$logger = new Liberta\MLogger\Logger(__DIR__.'/logs');
 $logger->info('Returned a million search results');
 $logger->error('Oh dear.');
 $logger->debug('Got these users from the Database.', $users);
@@ -62,18 +62,18 @@ $logger->debug('Got these users from the Database.', $users);
 [2014-03-20 3:35:43.762578] [ERROR] Oh dear.
 [2014-03-20 3:35:43.762795] [DEBUG] Got these users from the Database.
     0: array(
-        'name' => 'Kenny Katzgrau',
-        'username' => 'katzgrau',
+        'name' => 'Paul Coiffier',
+        'username' => 'coiffierp',
     )
     1: array(
-        'name' => 'Dan Horrigan',
-        'username' => 'dhrrgn',
+        'name' => 'Michel Dupont',
+        'username' => 'mdup',
     )
 ```
 
 ## PSR-3 Compliant
 
-KLogger is [PSR-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md)
+MLogger is [PSR-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md)
 compliant. This means it implements the `Psr\Log\LoggerInterface`.
 
 [See Here for the interface definition.](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md#3-psrlogloggerinterface)
@@ -116,7 +116,7 @@ $logger->info('Something Happened Here'); // Will be NOT logged
 
 ### Additional Options
 
-KLogger supports additional options via third parameter in the constructor:
+MLogger supports additional options via third parameter in the constructor:
 
 ``` php
 <?php
@@ -137,32 +137,6 @@ Here's the full list:
 | prefix  | 'log_' | The log file prefix |
 
 
-## Why use KLogger?
-
-Why not? Just drop it in and go. If it saves you time and does what you need,
-go for it! Take a line from the book of our C-code fathers: "`build` upon the
-work of others".
-
-## Who uses KLogger?
-
-Klogger has been used in projects at:
-
-    * The University of Iowa
-    * The University of Laverne
-    * The New Jersey Institute of Technology
-    * Middlesex Hospital in NJ
-
-Additionally, it's been used in numerous projects, both commercial and personal.
-
-## Special Thanks
-
-Special thanks to all contributors:
-
-* [Dan Horrigan](http://twitter.com/dhrrgn)
-* [Brian Fenton](http://github.com/fentie)
-* [Tim Kinnane](http://twitter.com/etherealtim)
-* [Onno Vos](https://github.com/onno-vos-dev)
-* [Cameron Will](https://github.com/cwill747)
 
 ## License
 
