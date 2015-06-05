@@ -1,7 +1,7 @@
 {
-    "name": "katzgrau/klogger",
+    "name": "liberta/mlogger",
     "version": "dev-master",
-    "description": "A Simple Logging Class",
+    "description": "A Simple Logging System",
     "keywords": ["logging"],
     "require": {
         "php": ">=5.3",
@@ -12,6 +12,10 @@
     },
     "license": "MIT",
     "authors": [
+		{
+            "name": "Paul Coiffier",
+            "email": "coiffier.paul@gmail.com"
+        },
         {
             "name": "Kenny Katzgrau",
             "email": "katzgrau@gmail.com"
@@ -23,7 +27,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Katzgrau\\KLogger\\": "src/"
+            "Liberta\\MLogger\\": "src/"
         },
         "classmap": ["src/"]
     }

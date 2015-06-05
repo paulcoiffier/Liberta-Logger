@@ -1,5 +1,5 @@
 <?php
-namespace Katzgrau\KLogger;
+namespace Liberta\MLogger;
 
 use DateTime;
 use RuntimeException;

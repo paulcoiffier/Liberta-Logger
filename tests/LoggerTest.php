@@ -1,6 +1,6 @@
 <?php
 
-use Katzgrau\KLogger\Logger;
+use Liberta\MLogger;
 use Psr\Log\LogLevel;
 
 class LoggerTest extends PHPUnit_Framework_TestCase
