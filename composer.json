@@ -1,6 +1,6 @@
 {
     "name": "liberta/mlogger",
-    "version": "dev-master",
+    "version": "2.0",
     "description": "A Simple Logging System",
     "keywords": ["logging"],
     "require": {
