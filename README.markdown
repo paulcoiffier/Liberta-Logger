@@ -40,12 +40,12 @@ require 'vendor/autoload.php';
 
 $users = [
     [
-        'name' => 'Kenny Katzgrau',
-        'username' => 'katzgrau',
+        'name' => 'Paul Coiffier',
+        'username' => 'pcoiffier',
     ],
     [
-        'name' => 'Dan Horrigan',
-        'username' => 'dhrrgn',
+        'name' => 'Audrey Dupont',
+        'username' => 'adupont',
     ],
 ];
 
@@ -109,7 +109,7 @@ LogLevel::DEBUG;
 ``` php
 <?php
 // The 
-$logger = new Katzgrau\KLogger\Logger('/var/log/', Psr\Log\LogLevel::WARNING);
+$logger = new liberta\mlogger\Logger('/var/log/', Psr\Log\LogLevel::WARNING);
 $logger->error('Uh Oh!'); // Will be logged
 $logger->info('Something Happened Here'); // Will be NOT logged
 ```
@@ -121,7 +121,7 @@ MLogger supports additional options via third parameter in the constructor:
 ``` php
 <?php
 // Example
-$logger = new Katzgrau\KLogger\Logger('/var/log/', Psr\Log\LogLevel::WARNING, array (
+$logger = new liberta\mlogger\Logger('/var/log/', Psr\Log\LogLevel::WARNING, array (
     'extension' => 'log', // changes the log file extension
 ));
 ```
