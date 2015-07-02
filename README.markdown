@@ -142,7 +142,9 @@ Here's the full list:
 
 The MIT License
 
+Copyright (c) 2015 Paul Coiffier <coiffier.paul@gmail.com>
 Copyright (c) 2008-2014 Kenny Katzgrau <katzgrau@gmail.com>
+
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
