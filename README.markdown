@@ -1,4 +1,4 @@
-# MLogger: Simple Logging for PHP
+# Liberta-Logger: Simple Logging for PHP
 
 A project written by [Paul Coifier](http://www.mobissime.com) .
 
