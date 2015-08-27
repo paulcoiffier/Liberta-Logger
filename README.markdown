@@ -4,7 +4,7 @@ A project written by [Paul Coifier](http://www.mobissime.com) .
 
 ## About
 
-MLogger is an easy-to-use [PSR-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md)
+Liberta-Logger is an easy-to-use [PSR-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md)
 compliant logging class for PHP. It isn't naive about
 file permissions (which is expected). It was meant to be a class that you could
 quickly include into a project and have working right away.
@@ -73,7 +73,7 @@ $logger->debug('Got these users from the Database.', $users);
 
 ## PSR-3 Compliant
 
-MLogger is [PSR-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md)
+Liberta-Logger is [PSR-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md)
 compliant. This means it implements the `Psr\Log\LoggerInterface`.
 
 [See Here for the interface definition.](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md#3-psrlogloggerinterface)
