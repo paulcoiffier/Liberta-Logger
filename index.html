@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Liberta-logger by paulcoiffier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Liberta-logger</h1>
+      <h2 class="project-tagline">A Simple Logging Class For PHP</h2>
+      <a href="https://github.com/paulcoiffier/Liberta-Logger" class="btn">View on GitHub</a>
+      <a href="https://github.com/paulcoiffier/Liberta-Logger/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/paulcoiffier/Liberta-Logger/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="liberta-logger-simple-logging-for-php" class="anchor" href="#liberta-logger-simple-logging-for-php" aria-hidden="true"><span class="octicon octicon-link"></span></a>Liberta-Logger: Simple Logging for PHP</h1>
+
+<p>A project written by <a href="http://www.mobissime.com">Paul Coifier</a> .</p>
+
+<h2>
+<a id="about" class="anchor" href="#about" aria-hidden="true"><span class="octicon octicon-link"></span></a>About</h2>
+
+<p>Liberta-Logger is an easy-to-use <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md">PSR-3</a>
+compliant logging class for PHP. It isn't naive about
+file permissions (which is expected). It was meant to be a class that you could
+quickly include into a project and have working right away.</p>
+
+<p>If you need a logger that supports PHP &lt; 5.3.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a id="composer" class="anchor" href="#composer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Composer</h3>
+
+<p>From the Command Line:</p>
+
+<pre><code>composer require liberta\logger:dev-master
+</code></pre>
+
+<p>In your <code>composer.json</code>:</p>
+
+<div class="highlight highlight-json"><pre>{
+    <span class="pl-s"><span class="pl-pds">"</span>require<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>liberta/logger<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>dev-master<span class="pl-pds">"</span></span>
+    }
+}</pre></div>
+
+<h2>
+<a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Usage</h2>
+
+<div class="highlight highlight-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>vendor/autoload.php<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$users</span> <span class="pl-k">=</span> [</span>
+<span class="pl-s1">    [</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>Paul Coiffier<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>username<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>pcoiffier<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    ],</span>
+<span class="pl-s1">    [</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>Audrey Dupont<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>username<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>adupont<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    ],</span>
+<span class="pl-s1">];</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$logger</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Liberta\Logger\</span><span class="pl-c1">Logger</span>(<span class="pl-c1">__DIR__</span><span class="pl-k">.</span><span class="pl-s"><span class="pl-pds">'</span>/logs<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$logger</span><span class="pl-k">-&gt;</span>info(<span class="pl-s"><span class="pl-pds">'</span>Returned a million search results<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$logger</span><span class="pl-k">-&gt;</span>error(<span class="pl-s"><span class="pl-pds">'</span>Oh dear.<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$logger</span><span class="pl-k">-&gt;</span>debug(<span class="pl-s"><span class="pl-pds">'</span>Got these users from the Database.<span class="pl-pds">'</span></span>, <span class="pl-smi">$users</span>);</span></pre></div>
+
+<h3>
+<a id="output" class="anchor" href="#output" aria-hidden="true"><span class="octicon octicon-link"></span></a>Output</h3>
+
+<pre><code>[2014-03-20 3:35:43.762437] [INFO] Returned a million search results
+[2014-03-20 3:35:43.762578] [ERROR] Oh dear.
+[2014-03-20 3:35:43.762795] [DEBUG] Got these users from the Database.
+    0: array(
+        'name' =&gt; 'Paul Coiffier',
+        'username' =&gt; 'coiffierp',
+    )
+    1: array(
+        'name' =&gt; 'Michel Dupont',
+        'username' =&gt; 'mdup',
+    )
+</code></pre>
+
+<h2>
+<a id="psr-3-compliant" class="anchor" href="#psr-3-compliant" aria-hidden="true"><span class="octicon octicon-link"></span></a>PSR-3 Compliant</h2>
+
+<p>Liberta-Logger is <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md">PSR-3</a>
+compliant. This means it implements the <code>Psr\Log\LoggerInterface</code>.</p>
+
+<p><a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md#3-psrlogloggerinterface">See Here for the interface definition.</a></p>
+
+<h2>
+<a id="setting-the-log-level-threshold" class="anchor" href="#setting-the-log-level-threshold" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting the Log Level Threshold</h2>
+
+<p>You can use the <code>Psr\Log\LogLevel</code> constants to set Log Level Threshold, so that
+any messages below that level, will not be logged.</p>
+
+<h3>
+<a id="default-level" class="anchor" href="#default-level" aria-hidden="true"><span class="octicon octicon-link"></span></a>Default Level</h3>
+
+<p>The default level is <code>DEBUG</code>, which means everything will be logged.</p>
+
+<h3>
+<a id="available-levels" class="anchor" href="#available-levels" aria-hidden="true"><span class="octicon octicon-link"></span></a>Available Levels</h3>
+
+<div class="highlight highlight-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Psr\Log\LogLevel</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// These are in order of highest priority to lowest.</span></span>
+<span class="pl-s1"><span class="pl-c1">LogLevel</span><span class="pl-k">::</span><span class="pl-c1">EMERGENCY</span>;</span>
+<span class="pl-s1"><span class="pl-c1">LogLevel</span><span class="pl-k">::</span><span class="pl-c1">ALERT</span>;</span>
+<span class="pl-s1"><span class="pl-c1">LogLevel</span><span class="pl-k">::</span><span class="pl-c1">CRITICAL</span>;</span>
+<span class="pl-s1"><span class="pl-c1">LogLevel</span><span class="pl-k">::</span><span class="pl-c1">ERROR</span>;</span>
+<span class="pl-s1"><span class="pl-c1">LogLevel</span><span class="pl-k">::</span><span class="pl-c1">WARNING</span>;</span>
+<span class="pl-s1"><span class="pl-c1">LogLevel</span><span class="pl-k">::</span><span class="pl-c1">NOTICE</span>;</span>
+<span class="pl-s1"><span class="pl-c1">LogLevel</span><span class="pl-k">::</span><span class="pl-c1">INFO</span>;</span>
+<span class="pl-s1"><span class="pl-c1">LogLevel</span><span class="pl-k">::</span><span class="pl-c1">DEBUG</span>;</span></pre></div>
+
+<h3>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h3>
+
+<div class="highlight highlight-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// The </span></span>
+<span class="pl-s1"><span class="pl-smi">$logger</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Liberta\Logger\</span><span class="pl-c1">Logger</span>(<span class="pl-s"><span class="pl-pds">'</span>/var/log/<span class="pl-pds">'</span></span>, <span class="pl-c1">Psr\Log\</span><span class="pl-c1">LogLevel</span><span class="pl-k">::</span><span class="pl-c1">WARNING</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$logger</span><span class="pl-k">-&gt;</span>error(<span class="pl-s"><span class="pl-pds">'</span>Uh Oh!<span class="pl-pds">'</span></span>); <span class="pl-c">// Will be logged</span></span>
+<span class="pl-s1"><span class="pl-smi">$logger</span><span class="pl-k">-&gt;</span>info(<span class="pl-s"><span class="pl-pds">'</span>Something Happened Here<span class="pl-pds">'</span></span>); <span class="pl-c">// Will be NOT logged</span></span></pre></div>
+
+<h3>
+<a id="additional-options" class="anchor" href="#additional-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Additional Options</h3>
+
+<p>MLogger supports additional options via third parameter in the constructor:</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Example</span></span>
+<span class="pl-s1"><span class="pl-smi">$logger</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Liberta\Llogger\</span><span class="pl-c1">Logger</span>(<span class="pl-s"><span class="pl-pds">'</span>/var/log/<span class="pl-pds">'</span></span>, <span class="pl-c1">Psr\Log\</span><span class="pl-c1">LogLevel</span><span class="pl-k">::</span><span class="pl-c1">WARNING</span>, <span class="pl-k">array</span> (</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>extension<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>log<span class="pl-pds">'</span></span>, <span class="pl-c">// changes the log file extension</span></span>
+<span class="pl-s1">));</span></pre></div>
+
+<p>Here's the full list:</p>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dateFormat</td>
+<td>'Y-m-d G:i:s.u'</td>
+<td>The format of the date in the start of the log lone (php formatted)</td>
+</tr>
+<tr>
+<td>extension</td>
+<td>'txt'</td>
+<td>The log file extension</td>
+</tr>
+<tr>
+<td>filename</td>
+<td>[prefix][date].[extension]</td>
+<td>Set the filename for the log file. <strong>This overrides the prefix and extention options.</strong>
+</td>
+</tr>
+<tr>
+<td>flushFrequency</td>
+<td>
+<code>false</code> (disabled)</td>
+<td>How many lines to flush the output buffer after</td>
+</tr>
+<tr>
+<td>prefix</td>
+<td>'log_'</td>
+<td>The log file prefix</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>The MIT License</p>
+
+<p>Copyright (c) 2015 Paul Coiffier <a href="mailto:coiffier.paul@gmail.com">coiffier.paul@gmail.com</a>
+Copyright (c) 2008-2014 Kenny Katzgrau <a href="mailto:katzgrau@gmail.com">katzgrau@gmail.com</a></p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/paulcoiffier/Liberta-Logger">Liberta-logger</a> is maintained by <a href="https://github.com/paulcoiffier">paulcoiffier</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
