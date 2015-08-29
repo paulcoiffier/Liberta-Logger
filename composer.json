@@ -7,6 +7,10 @@
         "php": ">=5.3",
         "psr/log": "1.0.0"
     },
+    "repository": {
+    "type": "git",
+    "url": "git://github.com/paulcoiffier/Liberta-Logger.git"
+    },
     "require-dev": {
         "phpunit/phpunit": "4.0.*"
     },
