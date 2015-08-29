@@ -1,6 +1,6 @@
 {
     "name": "liberta/logger",
-    "version": "2.0",
+    "version": "3.0",
     "description": "A Simple Logging System",
     "keywords": ["logging"],
     "require": {
