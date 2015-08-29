@@ -9,7 +9,7 @@
     },
     "repository": {
     "type": "git",
-    "url": "git://github.com/paulcoiffier/Liberta-Logger.git"
+    "url": "git+ssh://github.com/paulcoiffier/Liberta-Logger.git"
     },
     "require-dev": {
         "phpunit/phpunit": "4.0.*"
