@@ -18,7 +18,7 @@ If you need a logger that supports PHP < 5.3.
 From the Command Line:
 
 ```
-composer require liberta\mlogger:2.0
+composer require liberta\logger:dev-master
 ```
 
 In your `composer.json`:
@@ -26,7 +26,7 @@ In your `composer.json`:
 ``` json
 {
     "require": {
-        "liberta\mlogger": "2.0"
+        "liberta\logger": "dev-master"
     }
 }
 ```
@@ -49,7 +49,7 @@ $users = [
     ],
 ];
 
-$logger = new Liberta\MLogger\Logger(__DIR__.'/logs');
+$logger = new Liberta\Logger\Logger(__DIR__.'/logs');
 $logger->info('Returned a million search results');
 $logger->error('Oh dear.');
 $logger->debug('Got these users from the Database.', $users);
@@ -109,7 +109,7 @@ LogLevel::DEBUG;
 ``` php
 <?php
 // The 
-$logger = new liberta\mlogger\Logger('/var/log/', Psr\Log\LogLevel::WARNING);
+$logger = new Liberta\Logger\Logger('/var/log/', Psr\Log\LogLevel::WARNING);
 $logger->error('Uh Oh!'); // Will be logged
 $logger->info('Something Happened Here'); // Will be NOT logged
 ```
@@ -121,7 +121,7 @@ MLogger supports additional options via third parameter in the constructor:
 ``` php
 <?php
 // Example
-$logger = new liberta\mlogger\Logger('/var/log/', Psr\Log\LogLevel::WARNING, array (
+$logger = new Liberta\Llogger\Logger('/var/log/', Psr\Log\LogLevel::WARNING, array (
     'extension' => 'log', // changes the log file extension
 ));
 ```
