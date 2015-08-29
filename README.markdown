@@ -26,7 +26,7 @@ In your `composer.json`:
 ``` json
 {
     "require": {
-        "liberta\logger": "dev-master"
+        "liberta/logger": "dev-master"
     }
 }
 ```
