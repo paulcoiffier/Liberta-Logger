@@ -1,5 +1,5 @@
 {
-    "name": "liberta/mlogger",
+    "name": "liberta/logger",
     "version": "2.0",
     "description": "A Simple Logging System",
     "keywords": ["logging"],
@@ -27,7 +27,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Liberta\\MLogger\\": "src/"
+            "Liberta\\Logger\\": "src/"
         },
         "classmap": ["src/"]
     }

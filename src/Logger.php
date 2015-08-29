@@ -1,5 +1,5 @@
 <?php
-namespace Liberta\MLogger;
+namespace Liberta\Logger;
 
 use DateTime;
 use RuntimeException;
@@ -12,14 +12,14 @@ use Psr\Log\LogLevel;
  * Originally written for use with wpSearch
  *
  * Usage:
- * $log = new Katzgrau\KLogger\Logger('/var/log/', Psr\Log\LogLevel::INFO);
+ * $log = new Liberta\Logger('/var/log/', Psr\Log\LogLevel::INFO);
  * $log->info('Returned a million search results'); //Prints to the log file
  * $log->error('Oh dear.'); //Prints to the log file
  * $log->debug('x = 5'); //Prints nothing due to current severity threshhold
  *
- * @author  Kenny Katzgrau <katzgrau@gmail.com>
- * @since   July 26, 2008
- * @link    https://github.com/katzgrau/KLogger
+ * @author  Paul Coiffier <coiffier.paul@gmail.com>
+ * @since   2015
+ * @link    https://github.com/paulcoiffier/Liberta-Logger
  * @version 1.0.0
  */
 
@@ -29,7 +29,7 @@ use Psr\Log\LogLevel;
 class Logger extends AbstractLogger
 {
     /**
-     * KLogger options
+     * Liberta-Logger options
      *  Anything options not considered 'core' to the logging library should be
      *  settable view the third parameter in the constructor
      *
@@ -179,7 +179,7 @@ class Logger extends AbstractLogger
     }
 
     /**
-     * Sets the date format used by all instances of KLogger
+     * Sets the date format used by all instances of Liberta-Logger
      *
      * @param string $dateFormat Valid format string for date()
      */
